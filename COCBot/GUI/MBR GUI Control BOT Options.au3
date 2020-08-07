@@ -716,6 +716,35 @@ Func btnTestDeadBase()
 	$g_bRunState = $currentRunState
 EndFunc   ;==>btnTestDeadBase
 
+#Region - Custom - Team AIO Mod++
+Func btnExecuteCapture()
+	$g_bdbgimh = True
+	
+	Local $currentRunState = $g_bRunState
+	$g_bRunState = True
+	$g_bdbgimh = True
+	Local $sFunc = GUICtrlRead($g_hTxtRunFunction)
+	SetLog("Run Function : " & $sFunc, $COLOR_INFO)
+
+	Local $hTimer = TimerInit() ; Begin the timer and store the handle in a variable.
+	Local $saExecResult = Execute($sFunc)
+	Setlog("Time Execution : " & TimerDiff($hTimer))
+
+	If StringIsSpace($saExecResult) And @error <> 0 Then
+		Setlog("Result : Error", $COLOR_ERROR)
+	ElseIf IsArray($saExecResult) Then
+		Setlog("Result (IsArray) : " & _ArrayToString($saExecResult, "|" -1, -1, "#"), $COLOR_INFO)
+		_ArrayDisplay($saExecResult, "Debug Func. Result")
+	Else
+		Setlog("Result : " & $saExecResult, $COLOR_INFO)
+	EndIf
+	
+	$g_bdbgimh = False
+
+	$g_bRunState = $currentRunState
+EndFunc   ;==>btnExecuteCapture
+#EndRegion - Custom - Team AIO Mod++
+
 Func btnTestAttackCSV()
 
 	BeginImageTest() ; get image for testing
@@ -977,40 +1006,28 @@ Func btnTestGetLocationBuildingImage()
 
 EndFunc   ;==>btnTestGetLocationBuildingImage
 
-#Region - Custom - Team AIO Mod++
-Func btnRunFunction($bExecuteCapture = False)
-	Local $bCurrentRunState = $g_bRunState, $bCurrentExecuteCapture = $g_bExecuteCapture, $iError = 0, $sSCap = ($bExecuteCapture = False) ? ("Run function ") : ("Run function + Capture ")
-	$g_bExecuteCapture = $bExecuteCapture
+Func btnRunFunction()
+	Local $currentRunState = $g_bRunState
 	$g_bRunState = True
 
-	; Prevent bugs.
 	Local $sFunc = GUICtrlRead($g_hTxtRunFunction)
-	$iError = @error
-	
-	If ($iError <> 0) Or StringIsSpace($sFunc) Or StringInStr($sFunc, "btnRunFunction()") > 0 Then 
-		Setlog($sSCap & "| Bad call.", $COLOR_ERROR)
-		Return
-	EndIf
-	
-	Setlog($sSCap & "| Run Function : " & $sFunc, $COLOR_ACTION)
+	SetLog("Run Function : " & $sFunc, $COLOR_INFO)
 
 	Local $hTimer = TimerInit() ; Begin the timer and store the handle in a variable.
 	Local $saExecResult = Execute($sFunc)
-	$iError = @error
-	Setlog($sSCap & "| Time Execution : " & TimerDiff($hTimer), $COLOR_INFO)
+	Setlog("Time Execution : " & TimerDiff($hTimer))
 
-	If $iError <> 0 Then
-		Setlog($sSCap & "| Result : Error.", $COLOR_ERROR)
+	If StringIsSpace($saExecResult) And @error <> 0 Then
+		Setlog("Result : Error", $COLOR_ERROR)
 	ElseIf IsArray($saExecResult) Then
-		Setlog($sSCap & "| Result (IsArray) : " & _ArrayToString($saExecResult, "|" -1, -1, "#"), $COLOR_INFO)
+		Setlog("Result (IsArray) : " & _ArrayToString($saExecResult, "|" -1, -1, "#"), $COLOR_INFO)
 		_ArrayDisplay($saExecResult, "Debug Func. Result")
 	Else
-		Setlog($sSCap & "| Result : " & $saExecResult, $COLOR_INFO)
+		Setlog("Result : " & $saExecResult, $COLOR_INFO)
 	EndIf
-	$g_bExecuteCapture = $bCurrentExecuteCapture
-	$g_bRunState = $bCurrentRunState
+
+	$g_bRunState = $currentRunState
 EndFunc
-#EndRegion - Custom - Team AIO Mod++
 
 Func btnTestCleanYard()
 	Local $currentRunState = $g_bRunState

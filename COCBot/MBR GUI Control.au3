@@ -571,7 +571,7 @@ Func GUIControl_WM_COMMAND($hWind, $iMsg, $wParam, $lParam)
 		Case $g_hBtnTestDeadBase
 			btnTestDeadBase()
 		Case $g_hbtnExecuteCapture
-			btnRunFunction(True) ; Custom - Team AIO Mod++
+			btnExecuteCapture()
 		Case $g_hBtnTestTHimgloc
 			imglocTHSearch()
 		Case $g_hBtnTestAttackCSV
@@ -585,7 +585,7 @@ Func GUIControl_WM_COMMAND($hWind, $iMsg, $wParam, $lParam)
 		Case $g_hBtnTestBuildingLocation
 			btnTestGetLocationBuilding()
 		Case $g_hBtnRunFunction
-			btnRunFunction(False) ; Custom - Team AIO Mod++
+			btnRunFunction()
 		Case $g_hBtnTestCleanYard
 			btnTestCleanYard()
 		Case $g_hBtnTestOcrMemory
