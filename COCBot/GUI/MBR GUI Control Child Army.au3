@@ -1205,7 +1205,7 @@ EndFunc   ;==>SelectTroop_QTEdit
 
 Func AddTroop_QTEdit($iTroop)
 	Local $bOverSpace = False, $bOverSlot = False
-	If $g_iQTEdit_TotalTroop + $g_aiTroopSpace[$iTroop] > 280 Then $bOverSpace = True
+	If $g_iQTEdit_TotalTroop + $g_aiTroopSpace[$iTroop] > 300 Then $bOverSpace = True
 
 	For $j = 0 To 6
 		If $bOverSpace Then ExitLoop
@@ -1246,7 +1246,7 @@ Func AddTroop_QTEdit($iTroop)
 	Next
 
 	If $bOverSpace Or $bOverSlot Then
-		ToolTip($bOverSlot ? "Quick train does not support more than 7 troop slots" : "Total selected troops exceeds possible camp capacity (280)")
+		ToolTip($bOverSlot ? "Quick train does not support more than 7 troop slots" : "Total selected troops exceeds possible camp capacity (300)")
 		Sleep(2000)
 		ToolTip('')
 	Else
@@ -1499,10 +1499,10 @@ Func TxtQTEdit_Troop()
 	Next
 	TotalTroopCount_QTEdit()
 
-	If $g_iQTEdit_TotalTroop > 280 Then
-		Local $iSpaceLeft = 280 - ($g_iQTEdit_TotalTroop - $iSpace)
+	If $g_iQTEdit_TotalTroop > 300 Then
+		Local $iSpaceLeft = 300 - ($g_iQTEdit_TotalTroop - $iSpace)
 		Local $iMaxQtyLeft = Int($iSpaceLeft / $g_aiTroopSpace[$iTroop])
-		ToolTip("Your input of " & $iQty & "x " & $g_asTroopNames[$iTroop] & " makes total troops to exceed possible camp capacity (280)." & @CRLF & "Automatically changing to: " & $iMaxQtyLeft & "x " & $g_asTroopNames[$iTroop])
+		ToolTip("Your input of " & $iQty & "x " & $g_asTroopNames[$iTroop] & " makes total troops to exceed possible camp capacity (300)." & @CRLF & "Automatically changing to: " & $iMaxQtyLeft & "x " & $g_asTroopNames[$iTroop])
 		Sleep(2000)
 		ToolTip('')
 		GUICtrlSetData($g_ahTxtQTEdit_Troop[$iSlot], $iMaxQtyLeft)

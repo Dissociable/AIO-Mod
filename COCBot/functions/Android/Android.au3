@@ -1644,6 +1644,14 @@ EndFunc   ;==>_ConnectAndroidAdb
 
 Func RebootAndroid($bRestart = True, $bStartOnlyAndroid = False)
 	FuncEnter(RebootAndroid)
+	While ProcessExists("adb.exe")
+		If Not $g_bRunState Then Return FuncReturn(False)
+		SetLog("Closing All ADB Instances", $COLOR_DEBUG)
+		ProcessClose("adb.exe")
+		Local $iPID = WinGetProcess("adb.exe")
+		RunWait(@comspec & " /c TaskKill /PID " & $iPID & " /F") 
+		Sleep(1000)
+	WEnd
 	ResumeAndroid()
 	If Not $g_bRunState Then Return FuncReturn(False)
 

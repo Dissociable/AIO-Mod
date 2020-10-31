@@ -34,16 +34,16 @@ Func QuickTrain()
 		SetLog("Checking Troop tab: " & $avTroopCamp[0] & "/" & $avTroopCamp[1] * 2)
 		If $avTroopCamp[1] = 0 Then ExitLoop
 
-		If $avTroopCamp[0] <= 0 Then ; 0/280
+		If $avTroopCamp[0] <= 0 Then ; 0/300
 			$iTroopStatus = 0
 			If $bDebug Then SetLog("No troop", $COLOR_DEBUG)
 
-		ElseIf $avTroopCamp[0] < $avTroopCamp[1] Then ; 1-279/280
+		ElseIf $avTroopCamp[0] < $avTroopCamp[1] Then ; 1-299/300
 			If Not IsQueueEmpty("Troops", True, False) Then DeleteQueued("Troops")
 			$bNeedRecheckTroop = True
 			If $bDebug Then SetLog("$bNeedRecheckTroop for at Army Tab: " & $bNeedRecheckTroop, $COLOR_DEBUG)
 
-		ElseIf $avTroopCamp[0] = $avTroopCamp[1] Then ; 280/280
+		ElseIf $avTroopCamp[0] = $avTroopCamp[1] Then ; 300/300
 			$iTroopStatus = 1
 			If $bDebug Then SetLog($g_bDoubleTrain ? "ready to make double troop training" : "troops are training perfectly", $COLOR_DEBUG)
 

@@ -56,7 +56,7 @@ Func DoubleTrain($bWarTroop = False) ; Check Stop For War - Team AiO MOD++
 		If $TroopCamp[1] <> $g_iTotalCampSpace Then _
 			SetLog("Incorrect Troop combo: " & $g_iTotalCampSpace & " vs Total camp: " & $TroopCamp[1] & @CRLF & @TAB & "Double train may not work well", $COLOR_DEBUG)
 
-		If $bWarTroop Or $bHasIncorrectTroop Or $TroopCamp[0] < $TroopCamp[1] Then ; <280/280 ; Check Stop For War and DoubleTrain precise - Team AiO MOD++
+		If $bWarTroop Or $bHasIncorrectTroop Or $TroopCamp[0] < $TroopCamp[1] Then ; <300/300 ; Check Stop For War and DoubleTrain precise - Team AiO MOD++
 			If Not $bWarTroop And $g_bDonationEnabled And $g_bChkDonate And MakingDonatedTroops("Troops") Then ; Check Stop For War - Team AiO MOD++
 				If $bDebug Then SetLog($Step & ". MakingDonatedTroops('Troops')", $COLOR_DEBUG)
 				$Step += 1
@@ -67,7 +67,7 @@ Func DoubleTrain($bWarTroop = False) ; Check Stop For War - Team AiO MOD++
 			$bNeedReCheckTroopTab = True
 			If $bDebug Then SetLog($Step & ". DeleteQueued('Troops'). $bNeedReCheckTroopTab: " & $bNeedReCheckTroopTab, $COLOR_DEBUG)
 
-		ElseIf $TroopCamp[0] = $TroopCamp[1] Then ; 280/280
+		ElseIf $TroopCamp[0] = $TroopCamp[1] Then ; 300/300
 			TrainFullTroop(True)
 			If $bDebug Then SetLog($Step & ". TrainFullTroop(True) done!", $COLOR_DEBUG)
 
