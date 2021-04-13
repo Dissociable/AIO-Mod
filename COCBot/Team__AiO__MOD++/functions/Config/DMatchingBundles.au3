@@ -10,6 +10,12 @@
 ; Example .......: No
 ; ===============================================================================================================================
 Global $g_sBaseDMatchingPathB = @ScriptDir & "\COCBot\Team__AiO__MOD++\Bundles\Image Matching"
+Global $g_sBaseErrorMessagesDMatchingPathB = $g_sBaseDMatchingPathB & "\ErrorMessages"
 
 ; Deadbase, Elixir Collectors.
 Global $g_sECollectorDMatB = $g_sBaseDMatchingPathB & "\deadbase\Elixir"
+
+; Error Messages
+Global $g_sErrConnErrDMatB = $g_sBaseErrorMessagesDMatchingPathB & "\ConnErr"
+
+

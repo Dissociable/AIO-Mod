@@ -530,7 +530,7 @@ Global $g_bDOCRDebugImages = False
 Global Const $g_sDissociableMatchLib = "\ModLibs\Dissociable.Matching.dll"
 Global Const $g_sLibDissociableMatchPath = $g_sLibPath & "\" & $g_sDissociableMatchLib
 Global $g_hLibDissociableMatch = -1 ; Handle to Dissociable.Matching.dll
-Global $g_bDMatchingDebugImages = True
+Global $g_bDMatchingDebugImages = False
 Global $g_iDMatchingThreads = 32
 #EndRegion - Dissociable.Matching - Team AIO Mod++
 Global Const $g_sLibIconPath = $g_sLibPath & "\MBRBOT.dll" ; icon library
