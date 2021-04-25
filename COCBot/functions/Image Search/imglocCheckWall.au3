@@ -1,11 +1,12 @@
 ; #FUNCTION# ====================================================================================================================
 ; Name ..........: imglocCheckWall
-; Description ...:
+; Description ...: Search for The Specific Wall Levels Using Imgloc Image Search *NEW* And Builder Icon List and then select them
+;										To Upgrade at the next step.
 ; Syntax ........:
 ; Parameters ....:
 ; Return values .:
 ; Author ........: Trlopes (06-2016)
-; Modified ......:
+; Modified ......: Dissociable (2021)
 ; Remarks .......: This file is part of MyBot, previously known as ClashGameBot. Copyright 2015-2019
 ;                  MyBot is distributed under the terms of the GNU GPL
 ; Related .......:
