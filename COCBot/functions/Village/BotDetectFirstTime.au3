@@ -19,7 +19,7 @@ Func BotDetectFirstTime()
 	If _Sleep($DELAYBOTDETECT1) Then Return
 
 	SetLog("Detecting your Buildings", $COLOR_INFO)
-
+#cs
 	If Not isInsideDiamond($g_aiTownHallPos) Then
 		checkMainScreen()
 		Collect(False)
@@ -128,4 +128,5 @@ Func BotDetectFirstTime()
 	If $g_bDebugSetlog Then SetDebugLog("Select TH Level:" & Number($g_iTownHallLevel), $COLOR_DEBUG)
 	GUICtrlSetState($g_ahPicTHLevels[$g_iTownHallLevel], $GUI_SHOW)
 	GUICtrlSetData($g_hLblTHLevels, $g_iTownHallLevel)
+	#ce
 EndFunc   ;==>BotDetectFirstTime

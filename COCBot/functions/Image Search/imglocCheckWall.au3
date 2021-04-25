@@ -57,6 +57,8 @@ Func imglocCheckWall()
 	;ClickP($aAway, 1, 0, "#0505") ; to prevent bot 'Anyone there ?'
 	ClickAway()
 
+	_ArrayDisplay($FoundWalls)
+
 	If ($FoundWalls[0] = "") Then ; nothing found
 		SetLog("No wall(s) level: " & $levelWall & " found.", $COLOR_ERROR)
 	Else
