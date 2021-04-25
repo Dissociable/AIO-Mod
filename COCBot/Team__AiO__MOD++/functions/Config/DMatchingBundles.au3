@@ -18,4 +18,7 @@ Global $g_sECollectorDMatB = $g_sBaseDMatchingPathB & "\deadbase\Elixir"
 ; Error Messages
 Global $g_sErrConnErrDMatB = $g_sBaseErrorMessagesDMatchingPathB & "\ConnErr"
 
+; Builder Menu
+Global $g_sBuilderMenuDMatB = $g_sBaseDMatchingPathB & "\Builder Menu"
+
 

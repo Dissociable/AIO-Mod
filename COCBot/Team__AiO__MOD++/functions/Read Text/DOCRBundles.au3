@@ -31,3 +31,6 @@ Global $g_sAttackBarDOCRB = $g_sBaseDOCRPathB & "\AttackBar.docr"
 
 ; AttackScreen Buttons
 Global $g_sASButtonsDOCRPath = $g_sBaseDOCRPathB & "\AttackScreen\Buttons"
+
+; Builder Menu Prices
+Global $g_sBuilderMenuPricesDOCRPath = $g_sBaseDOCRPathB & "\BuilderMenu Prices"

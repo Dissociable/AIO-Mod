@@ -524,13 +524,13 @@ Global $g_hLibUser32DLL = DllOpen("user32.dll") ; handle to user32.dll, DllClose
 Global Const $g_sDissociableOcrLib = "\ModLibs\Dissociable.OCR.dll"
 Global Const $g_sLibDissociableOcrPath = $g_sLibPath & "\" & $g_sDissociableOcrLib
 Global $g_hLibDissociableOcr = -1 ; Handle to Dissociable.OCR.dll
-Global $g_bDOCRDebugImages = False
+Global $g_bDOCRDebugImages = True
 #EndRegion - Dissociable.OCR - Team AIO Mod++
 #Region - Dissociable.Matching - Team AIO Mod++
 Global Const $g_sDissociableMatchLib = "\ModLibs\Dissociable.Matching.dll"
 Global Const $g_sLibDissociableMatchPath = $g_sLibPath & "\" & $g_sDissociableMatchLib
 Global $g_hLibDissociableMatch = -1 ; Handle to Dissociable.Matching.dll
-Global $g_bDMatchingDebugImages = False
+Global $g_bDMatchingDebugImages = True
 Global $g_iDMatchingThreads = 32
 #EndRegion - Dissociable.Matching - Team AIO Mod++
 Global Const $g_sLibIconPath = $g_sLibPath & "\MBRBOT.dll" ; icon library
